@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
-import 'package:report_samples/data/slow_moving.dart';
+import 'package:report_samples/data/near_expiry.dart';
 
 class ReportChart extends StatefulWidget {
   const ReportChart({super.key});
@@ -116,34 +116,33 @@ class _ReportChartState extends State<ReportChart> {
 
   List<Map> getChartData() {
     //Compute total units and total cost of the units
-    int short = 0;
+    int near = 0;
     int medium = 0;
-    int long = 0;
+    int far = 0;
 
-    for (var i = 0; i < slowMovingData.length; i++) {
-      if (int.parse(slowMovingData[i]["days_stock_kept"]) <= 80) {
-        short += 1;
-      } else if (int.parse(slowMovingData[i]["days_stock_kept"]) > 80 &&
-          int.parse(slowMovingData[i]["days_stock_kept"]) <= 120) {
+    for (var i = 0; i < nearExpiryData.length; i++) {
+      if (int.parse(nearExpiryData[i]["days_before_expiration"]) <= 14) {
+        near += 1;
+      } else if (int.parse(nearExpiryData[i]["days_before_expiration"]) > 14 &&
+          int.parse(nearExpiryData[i]["days_before_expiration"]) <= 30) {
         medium += 1;
-      } else if (int.parse(slowMovingData[i]["days_stock_kept"]) > 120 &&
-          int.parse(slowMovingData[i]["days_stock_kept"]) <= 180) {
-        long += 1;
+      } else if (int.parse(nearExpiryData[i]["days_before_expiration"]) > 31) {
+        far += 1;
       }
     }
 
     final List<Map> chartData = [
       {
-        "name": "Short Storage",
-        "amount": short.toString(),
+        "name": "Near Expiry",
+        "amount": near.toString(),
       },
       {
-        "name": "Medium Storage",
+        "name": "2 Weeks From Expiry",
         "amount": medium.toString(),
       },
       {
-        "name": "Long Storage",
-        "amount": long.toString(),
+        "name": "1 Month From Expiry",
+        "amount": far.toString(),
       },
     ];
     return chartData;

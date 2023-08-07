@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:report_samples/data/near_expiry.dart';
-import 'package:report_samples/data/slow_moving.dart';
 
 class Cards extends StatefulWidget {
   const Cards({super.key});
@@ -11,6 +10,7 @@ class Cards extends StatefulWidget {
 
 class _CardsState extends State<Cards> {
   int minDaysBeforeExpiration = 0;
+  int maxDaysBeforeExpiration = 0;
   List top3 = [];
   @override
   void initState() {
@@ -36,7 +36,7 @@ class _CardsState extends State<Cards> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "$minDaysBeforeExpiration Units",
+                      "$minDaysBeforeExpiration Days",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -48,8 +48,41 @@ class _CardsState extends State<Cards> {
                   height: 10,
                 ),
                 Text(
-                  "Sold Stocks",
+                  "Until the nearest\nexpiry",
                   style: TextStyle(fontSize: 15),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ),
+        Card(
+          child: Container(
+            height: 130,
+            width: 160,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "$maxDaysBeforeExpiration Days",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Until the farthest\nexpiry",
+                  style: TextStyle(fontSize: 15),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
@@ -60,31 +93,18 @@ class _CardsState extends State<Cards> {
   }
 
   void computeCardValues() {
-    int daysBeforeExpiration = 0;
-    List listahan = [];
+    List expirationDayList = [];
+    List sortedExpirationDayList = [];
 
     for (var i = 0; i < nearExpiryData.length; i++) {
-      final daysBeforeExpirationList =
-          nearExpiryData[i]["days_before_expiration"];
-      listahan.add(int.parse(nearExpiryData[i]["days_before_expiration"]));
-
-      if (int.parse(daysBeforeExpirationList) > daysBeforeExpiration) {
-        daysBeforeExpiration = int.parse(daysBeforeExpirationList);
-      }
+      expirationDayList
+          .add(int.parse(nearExpiryData[i]["days_before_expiration"]));
     }
-    print(listahan..sort());
+    sortedExpirationDayList = expirationDayList..sort();
 
-    for (var i = 0; i < 2; i++) {
-      final daysBeforeExpirationList =
-          nearExpiryData[i]["days_before_expiration"];
-      listahan.add(int.parse(nearExpiryData[i]["days_before_expiration"]));
-
-      if (int.parse(daysBeforeExpirationList) > daysBeforeExpiration) {
-        daysBeforeExpiration = int.parse(daysBeforeExpirationList);
-      }
-    }
     setState(() {
-      minDaysBeforeExpiration = daysBeforeExpiration;
+      minDaysBeforeExpiration = sortedExpirationDayList.first;
+      maxDaysBeforeExpiration = sortedExpirationDayList.last;
     });
   }
 }

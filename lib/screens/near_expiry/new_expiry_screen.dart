@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:report_samples/utils/drawer.dart';
 
-import '../slow_moving/components/table.dart';
+import 'components/table.dart';
 import 'components/cards.dart';
 import 'components/chart.dart';
 
@@ -13,7 +13,7 @@ class NearExpiryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("New Expiry"),
+        title: Text("Near Expiry"),
       ),
       drawer: const Drawer(
         child: MenuDrawer(),

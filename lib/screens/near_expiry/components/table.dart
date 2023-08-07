@@ -11,20 +11,24 @@ class ReportTable extends StatefulWidget {
 class _ReportTableState extends State<ReportTable> {
   @override
   Widget build(BuildContext context) {
-    return DataTable(columns: [
-      DataColumn(
-        label: Text('Item'),
-      ),
-      DataColumn(
-        label: Text('Descripition'),
-      ),
-      DataColumn(
-        label: Text('Expiration Date'),
-      ),
-      DataColumn(
-        label: Text('Days Before Expiration'),
-      ),
-    ], rows: _createRows());
+    return DataTable(
+        headingRowColor:
+            MaterialStateProperty.all(const Color.fromARGB(255, 236, 242, 229)),
+        columns: [
+          DataColumn(
+            label: Text('Item'),
+          ),
+          DataColumn(
+            label: Text('Descripition'),
+          ),
+          DataColumn(
+            label: Text('Expiration Date'),
+          ),
+          DataColumn(
+            label: Text('Days Before Expiration'),
+          ),
+        ],
+        rows: _createRows());
   }
 
   List<DataRow> _createRows() {
