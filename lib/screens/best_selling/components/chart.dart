@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
-import 'package:report_samples/data/best_selling.dart';
+import 'package:report_samples/data/best_selling_data.dart';
 import '../../../data/data.dart';
 
 class ReportChart extends StatefulWidget {

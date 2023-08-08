@@ -20,7 +20,7 @@ class _CardsState extends State<Cards> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         //Total stock cost card

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
-import 'package:report_samples/data/near_expiry.dart';
+import 'package:report_samples/data/near_expiry_data.dart';
 
 class ReportChart extends StatefulWidget {
   const ReportChart({super.key});

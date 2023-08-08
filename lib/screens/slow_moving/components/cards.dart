@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:report_samples/data/slow_moving.dart';
+import 'package:report_samples/data/slow_moving_data.dart';
 
 class Cards extends StatefulWidget {
   const Cards({super.key});

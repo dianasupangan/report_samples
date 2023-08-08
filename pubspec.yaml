@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   graphic: ^2.2.0
   intl: ^0.18.1
+  week_of_year: ^2.2.0
 
 dev_dependencies:
   flutter_test:

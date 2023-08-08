@@ -4,6 +4,7 @@ import 'package:report_samples/screens/daily_stock/daily_stock_screen.dart';
 import 'package:report_samples/screens/near_expiry/new_expiry_screen.dart';
 import 'package:report_samples/screens/slow_moving/slow_moving_screen.dart';
 import 'package:report_samples/screens/stock_cost_report/stock_cost_report_screen.dart';
+import 'package:report_samples/screens/week_on_week/week_on_week_screen.dart';
 
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({super.key});
@@ -79,6 +80,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
           title: const Text('Week-on-week'),
           onTap: () {
             Navigator.of(context).pop();
+            Navigator.of(context).pushReplacementNamed(WeekOnWeek.routeName);
           },
         ),
         ListTile(
