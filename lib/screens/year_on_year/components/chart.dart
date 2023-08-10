@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
-import 'package:report_samples/data/wow_data.dart';
+import 'package:report_samples/data/mom_data.dart';
+import 'package:report_samples/data/yoy_data.dart';
 import 'package:week_of_year/week_of_year.dart';
-
-import '../../../data/best_selling_data.dart';
 
 class ReportChart extends StatefulWidget {
   const ReportChart({super.key});
@@ -74,56 +73,67 @@ class _ReportChartState extends State<ReportChart> {
   }
 
   List<Map> getChartData() {
-    int weekOne = 0;
-    int weekTwo = 0;
-    int weekThree = 0;
-    int weekFour = 0;
+    int yearOne = 0;
+    int yearTwo = 0;
+    int yearThree = 0;
+    int yearFour = 0;
+    int yearFive = 0;
+    int yearSix = 0;
+
     //Get current date
-    final weekNow = DateTime.now().weekOfYear;
     final yearNow = DateTime.now().year;
 
-    // final oldestWeek
-    //Minus 4
-    final oldestDate = int.parse(weekNow.toString()) - 3;
-
-    for (var i = 0; i < weekOnWeek.length; i++) {
-      final year = (DateTime.parse(weekOnWeek[i]["date"])).year;
-      if (year == yearNow) {
-        if (DateTime.parse(weekOnWeek[i]["date"]).weekOfYear ==
-            int.parse(weekNow.toString()) - 3) {
-          weekOne = int.parse(weekOnWeek[i]["sold_stock"]);
-        }
-        if (DateTime.parse(weekOnWeek[i]["date"]).weekOfYear ==
-            int.parse(weekNow.toString()) - 2) {
-          weekTwo = int.parse(weekOnWeek[i]["sold_stock"]);
-        }
-        if (DateTime.parse(weekOnWeek[i]["date"]).weekOfYear ==
-            int.parse(weekNow.toString()) - 1) {
-          weekThree = int.parse(weekOnWeek[i]["sold_stock"]);
-        }
-        if (DateTime.parse(weekOnWeek[i]["date"]).weekOfYear ==
-            int.parse(weekNow.toString())) {
-          weekFour = int.parse(weekOnWeek[i]["sold_stock"]);
-        }
+    for (var i = 0; i < yearOnYear.length; i++) {
+      if (DateTime.parse(yearOnYear[i]["date"]).year ==
+          int.parse(yearNow.toString()) - 5) {
+        yearOne = int.parse(yearOnYear[i]["sold_stock"]);
+      }
+      if (DateTime.parse(yearOnYear[i]["date"]).year ==
+          int.parse(yearNow.toString()) - 4) {
+        yearTwo = int.parse(yearOnYear[i]["sold_stock"]);
+      }
+      if (DateTime.parse(yearOnYear[i]["date"]).year ==
+          int.parse(yearNow.toString()) - 3) {
+        yearThree = int.parse(yearOnYear[i]["sold_stock"]);
+      }
+      if (DateTime.parse(yearOnYear[i]["date"]).year ==
+          int.parse(yearNow.toString()) - 2) {
+        yearFour = int.parse(yearOnYear[i]["sold_stock"]);
+      }
+      if (DateTime.parse(yearOnYear[i]["date"]).year ==
+          int.parse(yearNow.toString()) - 1) {
+        yearFive = int.parse(yearOnYear[i]["sold_stock"]);
+      }
+      if (DateTime.parse(yearOnYear[i]["date"]).year ==
+          int.parse(yearNow.toString())) {
+        yearSix = int.parse(yearOnYear[i]["sold_stock"]);
       }
     }
 
     final List<Map> chartData = [
       {
-        "item": "Week ${int.parse(weekNow.toString()) - 3}",
-        "sold_stock": weekOne.toString(),
+        "item": "${int.parse(yearNow.toString()) - 5}",
+        "sold_stock": yearOne.toString(),
       },
       {
-        "item": "Week ${int.parse(weekNow.toString()) - 2}",
-        "sold_stock": weekTwo.toString(),
+        "item": "${int.parse(yearNow.toString()) - 4}",
+        "sold_stock": yearTwo.toString(),
       },
       {
-        "item": "Week ${int.parse(weekNow.toString()) - 1}",
-        "sold_stock": weekThree.toString(),
+        "item": "${int.parse(yearNow.toString()) - 3}",
+        "sold_stock": yearThree.toString(),
       },
       {
-        "item": "Week $weekNow",
-        "sold_stock": weekFour.toString(),
+        "item": "${int.parse(yearNow.toString()) - 2}",
+        "sold_stock": yearFour.toString(),
+      },
+      {
+        "item": "${int.parse(yearNow.toString()) - 1}",
+        "sold_stock": yearFive.toString(),
+      },
+      {
+        "item": "$yearNow",
+        "sold_stock": yearSix.toString(),
       }
     ];
     return chartData;

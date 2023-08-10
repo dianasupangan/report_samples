@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
 import 'package:report_samples/data/best_selling_data.dart';
-import '../../../data/data.dart';
 
 class ReportChart extends StatefulWidget {
   const ReportChart({super.key});
@@ -11,8 +10,6 @@ class ReportChart extends StatefulWidget {
 }
 
 class _ReportChartState extends State<ReportChart> {
-  List<Map> chartData = bestSellingData;
-
   @override
   Widget build(BuildContext context) {
     //Chart card

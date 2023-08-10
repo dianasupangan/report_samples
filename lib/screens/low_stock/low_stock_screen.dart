@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:report_samples/utils/drawer.dart';
-
+import 'package:report_samples/screens/daily_stock/components/chart.dart';
+import 'package:report_samples/screens/daily_stock/components/cards.dart';
+import '../../utils/drawer.dart';
 import 'components/table.dart';
-import 'components/chart.dart';
 
-class WeekOnWeek extends StatelessWidget {
-  static const routeName = "/week_on_week";
-  const WeekOnWeek({super.key});
+class LowStockReportScreen extends StatelessWidget {
+  static const routeName = "/low-stock-report";
+  const LowStockReportScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Week-On-Week Report"),
+        title: Text("Low Stock Report"),
       ),
       drawer: const Drawer(
         child: MenuDrawer(),
@@ -25,6 +25,10 @@ class WeekOnWeek extends StatelessWidget {
                 height: 20,
               ),
               ReportChart(),
+              SizedBox(
+                height: 20,
+              ),
+              Cards(),
               SizedBox(
                 height: 20,
               ),

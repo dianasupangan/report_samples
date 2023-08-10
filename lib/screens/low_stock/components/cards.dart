@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:report_samples/data/near_expiry_data.dart';
+
+import '../../../data/daily_stock_data.dart';
 
 class Cards extends StatefulWidget {
   const Cards({super.key});
@@ -9,9 +10,10 @@ class Cards extends StatefulWidget {
 }
 
 class _CardsState extends State<Cards> {
-  int minDaysBeforeExpiration = 0;
-  int maxDaysBeforeExpiration = 0;
-  List top3 = [];
+  int openingStock = 0;
+  int closingStock = 0;
+  int soldStock = 0;
+  List chartData = [];
   @override
   void initState() {
     computeCardValues();
@@ -23,10 +25,41 @@ class _CardsState extends State<Cards> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        //Total units card
+        Card(
+          child: Container(
+            height: 90,
+            width: 160,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "$openingStock Units",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Opening Stocks",
+                  style: TextStyle(fontSize: 15),
+                ),
+              ],
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 20,
+        ),
+
         //Total stock cost card
         Card(
           child: Container(
-            height: 130,
+            height: 90,
             width: 160,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +69,7 @@ class _CardsState extends State<Cards> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "$minDaysBeforeExpiration Days",
+                      "$closingStock Units",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -48,7 +81,7 @@ class _CardsState extends State<Cards> {
                   height: 10,
                 ),
                 Text(
-                  "Until the nearest\nexpiry",
+                  "Closing Stocks",
                   style: TextStyle(fontSize: 15),
                   textAlign: TextAlign.center,
                 ),
@@ -56,9 +89,13 @@ class _CardsState extends State<Cards> {
             ),
           ),
         ),
+        SizedBox(
+          width: 20,
+        ),
+        //Total stock cost card
         Card(
           child: Container(
-            height: 130,
+            height: 90,
             width: 160,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -68,7 +105,7 @@ class _CardsState extends State<Cards> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "$maxDaysBeforeExpiration Days",
+                      "$soldStock Units",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -80,9 +117,8 @@ class _CardsState extends State<Cards> {
                   height: 10,
                 ),
                 Text(
-                  "Until the farthest\nexpiry",
+                  "Sold Stocks",
                   style: TextStyle(fontSize: 15),
-                  textAlign: TextAlign.center,
                 ),
               ],
             ),
@@ -93,18 +129,24 @@ class _CardsState extends State<Cards> {
   }
 
   void computeCardValues() {
-    List expirationDayList = [];
-    List sortedExpirationDayList = [];
+    //Compute total units and total cost of the units
+    int totalOpeningStock = 0;
+    int totalClosingStock = 0;
+    int totalSoldStock = 0;
 
-    for (var i = 0; i < nearExpiryData.length; i++) {
-      expirationDayList
-          .add(int.parse(nearExpiryData[i]["days_before_expiration"]));
+    for (var i = 0; i < dailyStock.length; i++) {
+      final addOpeningStock = dailyStock[i]["opening_stock"];
+      final addClosingStock = dailyStock[i]["closing_stock"];
+      final addSoldStock = dailyStock[i]["sold_stock"];
+
+      totalOpeningStock += int.parse(addOpeningStock!);
+      totalClosingStock += int.parse(addClosingStock!);
+      totalSoldStock += int.parse(addSoldStock!);
     }
-    sortedExpirationDayList = expirationDayList..sort();
-
     setState(() {
-      minDaysBeforeExpiration = sortedExpirationDayList.first;
-      maxDaysBeforeExpiration = sortedExpirationDayList.last;
+      openingStock = totalOpeningStock;
+      closingStock = totalClosingStock;
+      soldStock = totalSoldStock;
     });
   }
 }

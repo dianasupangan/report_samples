@@ -4,15 +4,15 @@ import 'package:report_samples/utils/drawer.dart';
 import 'components/table.dart';
 import 'components/chart.dart';
 
-class WeekOnWeek extends StatelessWidget {
-  static const routeName = "/week_on_week";
-  const WeekOnWeek({super.key});
+class MonthOnMonth extends StatelessWidget {
+  static const routeName = "/month_on_month";
+  const MonthOnMonth({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Week-On-Week Report"),
+        title: const Text("Month-On-Month Report"),
       ),
       drawer: const Drawer(
         child: MenuDrawer(),

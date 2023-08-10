@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
+import 'package:report_samples/data/mom_data.dart';
 import 'package:report_samples/data/wow_data.dart';
 import 'package:week_of_year/week_of_year.dart';
-
-import '../../../data/best_selling_data.dart';
 
 class ReportChart extends StatefulWidget {
   const ReportChart({super.key});
@@ -74,56 +73,73 @@ class _ReportChartState extends State<ReportChart> {
   }
 
   List<Map> getChartData() {
-    int weekOne = 0;
-    int weekTwo = 0;
-    int weekThree = 0;
-    int weekFour = 0;
+    int monthOne = 0;
+    int monthTwo = 0;
+    int monthThree = 0;
+    int monthFour = 0;
+    int monthFive = 0;
+    int monthSix = 0;
     //Get current date
-    final weekNow = DateTime.now().weekOfYear;
+    final monthNow = DateTime.now().month;
     final yearNow = DateTime.now().year;
 
     // final oldestWeek
     //Minus 4
-    final oldestDate = int.parse(weekNow.toString()) - 3;
 
-    for (var i = 0; i < weekOnWeek.length; i++) {
-      final year = (DateTime.parse(weekOnWeek[i]["date"])).year;
+    for (var i = 0; i < monthOnMonth.length; i++) {
+      final year = (DateTime.parse(monthOnMonth[i]["date"])).year;
       if (year == yearNow) {
-        if (DateTime.parse(weekOnWeek[i]["date"]).weekOfYear ==
-            int.parse(weekNow.toString()) - 3) {
-          weekOne = int.parse(weekOnWeek[i]["sold_stock"]);
+        if (DateTime.parse(monthOnMonth[i]["date"]).month ==
+            int.parse(monthNow.toString()) - 5) {
+          monthOne = int.parse(monthOnMonth[i]["sold_stock"]);
         }
-        if (DateTime.parse(weekOnWeek[i]["date"]).weekOfYear ==
-            int.parse(weekNow.toString()) - 2) {
-          weekTwo = int.parse(weekOnWeek[i]["sold_stock"]);
+        if (DateTime.parse(monthOnMonth[i]["date"]).month ==
+            int.parse(monthNow.toString()) - 4) {
+          monthTwo = int.parse(monthOnMonth[i]["sold_stock"]);
         }
-        if (DateTime.parse(weekOnWeek[i]["date"]).weekOfYear ==
-            int.parse(weekNow.toString()) - 1) {
-          weekThree = int.parse(weekOnWeek[i]["sold_stock"]);
+        if (DateTime.parse(monthOnMonth[i]["date"]).month ==
+            int.parse(monthNow.toString()) - 3) {
+          monthThree = int.parse(monthOnMonth[i]["sold_stock"]);
         }
-        if (DateTime.parse(weekOnWeek[i]["date"]).weekOfYear ==
-            int.parse(weekNow.toString())) {
-          weekFour = int.parse(weekOnWeek[i]["sold_stock"]);
+        if (DateTime.parse(monthOnMonth[i]["date"]).month ==
+            int.parse(monthNow.toString()) - 2) {
+          monthFour = int.parse(monthOnMonth[i]["sold_stock"]);
+        }
+        if (DateTime.parse(monthOnMonth[i]["date"]).month ==
+            int.parse(monthNow.toString()) - 1) {
+          monthFive = int.parse(monthOnMonth[i]["sold_stock"]);
+        }
+        if (DateTime.parse(monthOnMonth[i]["date"]).month ==
+            int.parse(monthNow.toString())) {
+          monthSix = int.parse(monthOnMonth[i]["sold_stock"]);
         }
       }
     }
 
     final List<Map> chartData = [
       {
-        "item": "Week ${int.parse(weekNow.toString()) - 3}",
-        "sold_stock": weekOne.toString(),
+        "item": "${int.parse(monthNow.toString()) - 5}/$yearNow",
+        "sold_stock": monthOne.toString(),
       },
       {
-        "item": "Week ${int.parse(weekNow.toString()) - 2}",
-        "sold_stock": weekTwo.toString(),
+        "item": "${int.parse(monthNow.toString()) - 4}/$yearNow",
+        "sold_stock": monthTwo.toString(),
       },
       {
-        "item": "Week ${int.parse(weekNow.toString()) - 1}",
-        "sold_stock": weekThree.toString(),
+        "item": "${int.parse(monthNow.toString()) - 3}/$yearNow",
+        "sold_stock": monthThree.toString(),
       },
       {
-        "item": "Week $weekNow",
-        "sold_stock": weekFour.toString(),
+        "item": "${int.parse(monthNow.toString()) - 2}/$yearNow",
+        "sold_stock": monthFour.toString(),
+      },
+      {
+        "item": "${int.parse(monthNow.toString()) - 1}/$yearNow",
+        "sold_stock": monthFive.toString(),
+      },
+      {
+        "item": "$monthNow/$yearNow",
+        "sold_stock": monthSix.toString(),
       }
     ];
     return chartData;
