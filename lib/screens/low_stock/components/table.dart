@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:report_samples/data/daily_stock_data.dart';
+import 'package:report_samples/data/low_stock_data.dart';
 
 class ReportTable extends StatefulWidget {
   const ReportTable({super.key});
@@ -22,13 +22,10 @@ class _ReportTableState extends State<ReportTable> {
             label: Text('Descripition'),
           ),
           DataColumn(
-            label: Text('Opening Stock'),
-          ),
-          DataColumn(
-            label: Text('Closing Stock'),
-          ),
-          DataColumn(
             label: Text('Sold Stock'),
+          ),
+          DataColumn(
+            label: Text('Stock Left'),
           ),
         ],
         rows: _createRows());
@@ -37,13 +34,12 @@ class _ReportTableState extends State<ReportTable> {
   List<DataRow> _createRows() {
     List<DataRow> row = [];
 
-    for (var items in dailyStock) {
+    for (var items in lowStockData) {
       row.add(DataRow(cells: [
         DataCell(Text(items["item"])),
         DataCell(Text(items["description"])),
-        DataCell(Text(items["opening_stock"])),
-        DataCell(Text(items["closing_stock"])),
         DataCell(Text(items["sold_stock"])),
+        DataCell(Text(items["stock_left"])),
       ]));
     }
 

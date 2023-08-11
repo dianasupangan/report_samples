@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:report_samples/screens/daily_stock/components/chart.dart';
-import 'package:report_samples/screens/daily_stock/components/cards.dart';
+import 'components/chart.dart';
+import 'components/cards.dart';
 import '../../utils/drawer.dart';
 import 'components/table.dart';
 
