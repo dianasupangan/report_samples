@@ -17,7 +17,7 @@ class YearOnYear extends StatelessWidget {
       drawer: const Drawer(
         child: MenuDrawer(),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Center(
           child: Column(
             children: [

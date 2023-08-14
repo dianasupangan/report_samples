@@ -13,12 +13,12 @@ class SlowMovingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Slow Moving"),
+        title: const Text("Slow Moving"),
       ),
       drawer: const Drawer(
         child: MenuDrawer(),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

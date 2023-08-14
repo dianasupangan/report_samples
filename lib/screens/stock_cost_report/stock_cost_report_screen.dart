@@ -12,7 +12,7 @@ class StockCostReportScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Stock Cost Report"),
+        title: const Text("Stock Cost Report"),
       ),
       drawer: const Drawer(
         child: MenuDrawer(),

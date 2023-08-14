@@ -59,7 +59,7 @@ class _ReportChartState extends State<ReportChart> {
                                   color: Defaults.colors10[index],
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                               Text(
@@ -67,7 +67,7 @@ class _ReportChartState extends State<ReportChart> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                         ],

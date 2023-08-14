@@ -53,7 +53,7 @@ class _ReportChartState extends State<ReportChart> {
                         encoder: (tuple) => Label(
                           tuple['amount'].toString(),
                           LabelStyle(
-                              textStyle: TextStyle(
+                              textStyle: const TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold)),
                         ),
@@ -88,10 +88,10 @@ class _ReportChartState extends State<ReportChart> {
                                 color: Defaults.colors10[index],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             Text(
@@ -99,7 +99,7 @@ class _ReportChartState extends State<ReportChart> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                       ],

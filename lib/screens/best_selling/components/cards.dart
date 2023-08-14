@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:report_samples/data/best_selling_data.dart';
-import 'package:report_samples/data/slow_moving_data.dart';
 
 class Cards extends StatefulWidget {
   const Cards({super.key});
@@ -38,17 +37,17 @@ class _CardsState extends State<Cards> {
                   children: [
                     Text(
                       "$soldStock Units",
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Sold Stocks",
                   style: TextStyle(fontSize: 15),
                 ),

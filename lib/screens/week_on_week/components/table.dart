@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:report_samples/data/near_expiry_data.dart';
 import 'package:report_samples/data/wow_data.dart';
 
 class ReportTable extends StatefulWidget {
@@ -15,7 +14,7 @@ class _ReportTableState extends State<ReportTable> {
     return DataTable(
         headingRowColor:
             MaterialStateProperty.all(const Color.fromARGB(255, 236, 242, 229)),
-        columns: [
+        columns: const [
           DataColumn(
             label: Text('Item'),
           ),

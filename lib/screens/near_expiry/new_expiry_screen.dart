@@ -13,12 +13,12 @@ class NearExpiryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Near Expiry"),
+        title: const Text("Near Expiry"),
       ),
       drawer: const Drawer(
         child: MenuDrawer(),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Center(
           child: Column(
             children: [

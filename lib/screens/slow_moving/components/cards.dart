@@ -34,15 +34,15 @@ class _CardsState extends State<Cards> {
               children: [
                 Text(
                   "$mostDaysInStock Days",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Stored in the warehouse",
                   style: TextStyle(fontSize: 15),
                   textAlign: TextAlign.center,
@@ -51,7 +51,7 @@ class _CardsState extends State<Cards> {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
 
@@ -69,17 +69,17 @@ class _CardsState extends State<Cards> {
                   children: [
                     Text(
                       "$soldStock Units",
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Sold Stocks",
                   style: TextStyle(fontSize: 15),
                 ),

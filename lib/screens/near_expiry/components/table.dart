@@ -14,7 +14,7 @@ class _ReportTableState extends State<ReportTable> {
     return DataTable(
         headingRowColor:
             MaterialStateProperty.all(const Color.fromARGB(255, 236, 242, 229)),
-        columns: [
+        columns: const [
           DataColumn(
             label: Text('Item'),
           ),

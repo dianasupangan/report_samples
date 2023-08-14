@@ -40,12 +40,12 @@ class _CardsState extends State<Cards> {
                   children: [
                     Text(
                       onHandStock.toString(),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
+                    const Text(
                       " Units",
                       style: TextStyle(
                         fontSize: 20,
@@ -54,10 +54,10 @@ class _CardsState extends State<Cards> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Total Stocks",
                   style: TextStyle(fontSize: 15),
                 ),
@@ -65,7 +65,7 @@ class _CardsState extends State<Cards> {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
 
@@ -87,17 +87,17 @@ class _CardsState extends State<Cards> {
                           costPerUnit.toString(),
                         ),
                       ),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Total Stock Cost per Unit",
                   style: TextStyle(fontSize: 15),
                   textAlign: TextAlign.center,
@@ -106,7 +106,7 @@ class _CardsState extends State<Cards> {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
         //Total stock cost card
@@ -127,17 +127,17 @@ class _CardsState extends State<Cards> {
                           stockCost.toString(),
                         ),
                       ),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Total Stock Cost",
                   style: TextStyle(fontSize: 15),
                 ),

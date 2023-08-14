@@ -37,17 +37,17 @@ class _CardsState extends State<Cards> {
                   children: [
                     Text(
                       "$minDaysBeforeExpiration Days",
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Until the nearest\nexpiry",
                   style: TextStyle(fontSize: 15),
                   textAlign: TextAlign.center,
@@ -69,17 +69,17 @@ class _CardsState extends State<Cards> {
                   children: [
                     Text(
                       "$maxDaysBeforeExpiration Days",
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Until the farthest\nexpiry",
                   style: TextStyle(fontSize: 15),
                   textAlign: TextAlign.center,

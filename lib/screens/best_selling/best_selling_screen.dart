@@ -13,32 +13,34 @@ class BestSelling extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Best Selling"),
+        title: const Text("Best Selling"),
       ),
       drawer: const Drawer(
         child: MenuDrawer(),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ReportChart(),
-                SizedBox(
-                  height: 20,
-                ),
-                Cards(),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            ReportTable(),
-          ],
+      body: const SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ReportChart(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Cards(),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ReportTable(),
+            ],
+          ),
         ),
       ),
     );

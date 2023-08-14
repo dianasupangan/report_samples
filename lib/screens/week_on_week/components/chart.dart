@@ -3,8 +3,6 @@ import 'package:graphic/graphic.dart';
 import 'package:report_samples/data/wow_data.dart';
 import 'package:week_of_year/week_of_year.dart';
 
-import '../../../data/best_selling_data.dart';
-
 class ReportChart extends StatefulWidget {
   const ReportChart({super.key});
 
@@ -81,10 +79,6 @@ class _ReportChartState extends State<ReportChart> {
     //Get current date
     final weekNow = DateTime.now().weekOfYear;
     final yearNow = DateTime.now().year;
-
-    // final oldestWeek
-    //Minus 4
-    final oldestDate = int.parse(weekNow.toString()) - 3;
 
     for (var i = 0; i < weekOnWeek.length; i++) {
       final year = (DateTime.parse(weekOnWeek[i]["date"])).year;
