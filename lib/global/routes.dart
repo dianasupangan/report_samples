@@ -10,6 +10,7 @@ import 'package:report_samples/screens/week_on_week/week_on_week_screen.dart';
 import 'package:report_samples/screens/year_on_year/year_on_year_screen.dart';
 
 import '../screens/home/home_screen.dart';
+import '../screens/platform_used/platform_used_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
   "/": (ctx) => const HomeScreen(),
@@ -22,4 +23,5 @@ final Map<String, WidgetBuilder> routes = {
   MonthOnMonth.routeName: (ctx) => const MonthOnMonth(),
   YearOnYear.routeName: (ctx) => const YearOnYear(),
   LowStockReportScreen.routeName: (ctx) => const LowStockReportScreen(),
+  PlatformUsedScreen.routeName: (ctx) => const PlatformUsedScreen(),
 };

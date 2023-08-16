@@ -9,6 +9,8 @@ import 'package:report_samples/screens/stock_cost_report/stock_cost_report_scree
 import 'package:report_samples/screens/week_on_week/week_on_week_screen.dart';
 import 'package:report_samples/screens/year_on_year/year_on_year_screen.dart';
 
+import '../screens/platform_used/platform_used_screen.dart';
+
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({super.key});
 
@@ -23,7 +25,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
       // Important: Remove any padding from the ListView.
       padding: EdgeInsets.zero,
       children: [
-        DrawerHeader(
+        const DrawerHeader(
           child: Text("Hi"),
         ),
         ListTile(
@@ -116,6 +118,8 @@ class _MenuDrawerState extends State<MenuDrawer> {
           title: const Text('Platform used'),
           onTap: () {
             Navigator.of(context).pop();
+            Navigator.of(context)
+                .pushReplacementNamed(PlatformUsedScreen.routeName);
           },
         ),
         ListTile(

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
 import 'package:report_samples/data/low_stock_data.dart';
 
-class ReportChart extends StatefulWidget {
-  const ReportChart({super.key});
+class ListCard extends StatefulWidget {
+  const ListCard({super.key});
 
   @override
-  State<ReportChart> createState() => _ReportChartState();
+  State<ListCard> createState() => _ListCardState();
 }
 
-class _ReportChartState extends State<ReportChart> {
+class _ListCardState extends State<ListCard> {
   List<Map> chartData = [];
   @override
   void initState() {
@@ -41,7 +41,7 @@ class _ReportChartState extends State<ReportChart> {
                   padding: const EdgeInsets.fromLTRB(30, 10, 0, 0),
                   alignment: Alignment.bottomLeft,
                   margin: const EdgeInsets.only(top: 10),
-                  width: 350,
+                  width: 250,
                   height: 120,
                   child: ListView.builder(
                     itemCount: chartData.length,

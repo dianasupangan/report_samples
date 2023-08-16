@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'components/card.dart';
-import '../../utils/drawer.dart';
-import 'components/table.dart';
+import 'package:report_samples/utils/drawer.dart';
 
-class LowStockReportScreen extends StatelessWidget {
-  static const routeName = "/low-stock-report";
-  const LowStockReportScreen({super.key});
+import '../best_selling/components/cards.dart';
+import 'components/table.dart';
+import 'components/chart.dart';
+
+class PlatformUsedScreen extends StatelessWidget {
+  static const routeName = "/platform_used_screen";
+  const PlatformUsedScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Low Stock Report"),
+        title: const Text("Platform Used"),
       ),
       drawer: const Drawer(
         child: MenuDrawer(),
@@ -23,7 +25,7 @@ class LowStockReportScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              ListCard(),
+              ReportChart(),
               SizedBox(
                 height: 20,
               ),
