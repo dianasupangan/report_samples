@@ -10,12 +10,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: const Text("Home"),
       ),
       drawer: const Drawer(
         child: MenuDrawer(),
       ),
-      body: Center(
+      body: const Center(
         child: ReportsGrid(),
       ),
     );

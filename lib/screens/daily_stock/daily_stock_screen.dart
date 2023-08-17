@@ -12,12 +12,12 @@ class DailyStockReportScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Daily Stock Report"),
+        title: const Text("Daily Stock Report"),
       ),
       drawer: const Drawer(
         child: MenuDrawer(),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Center(
           child: Column(
             children: [

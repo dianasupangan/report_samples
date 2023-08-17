@@ -28,7 +28,7 @@ class _CardsState extends State<Cards> {
       children: [
         //Total units card
         Card(
-          child: Container(
+          child: SizedBox(
             height: 90,
             width: 160,
             child: Column(
@@ -71,7 +71,7 @@ class _CardsState extends State<Cards> {
 
         //Total stock cost card
         Card(
-          child: Container(
+          child: SizedBox(
             height: 90,
             width: 160,
             child: Column(
@@ -111,7 +111,7 @@ class _CardsState extends State<Cards> {
         ),
         //Total stock cost card
         Card(
-          child: Container(
+          child: SizedBox(
             height: 90,
             width: 160,
             child: Column(

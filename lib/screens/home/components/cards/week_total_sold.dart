@@ -27,12 +27,12 @@ class _WeeklyTotalSoldState extends State<WeeklyTotalSold> {
             children: [
               Text(
                 getWeeklyTotal,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 21,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 " Total",
                 style: TextStyle(
                   fontSize: 17,
@@ -40,7 +40,7 @@ class _WeeklyTotalSoldState extends State<WeeklyTotalSold> {
               ),
             ],
           ),
-          Text(
+          const Text(
             "Weekly Sold",
             style: TextStyle(
               fontSize: 17,

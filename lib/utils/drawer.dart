@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:report_samples/screens/abc_analysis/abc_analysis_screen.dart';
 import 'package:report_samples/screens/best_selling/best_selling_screen.dart';
 import 'package:report_samples/screens/daily_stock/daily_stock_screen.dart';
 import 'package:report_samples/screens/low_stock/low_stock_screen.dart';
 import 'package:report_samples/screens/month_on_month/month_on_month_screen.dart';
 import 'package:report_samples/screens/near_expiry/new_expiry_screen.dart';
+import 'package:report_samples/screens/promotion/promotion_report.dart';
+import 'package:report_samples/screens/sell_through/sell_through_screen.dart';
 import 'package:report_samples/screens/slow_moving/slow_moving_screen.dart';
 import 'package:report_samples/screens/stock_cost_report/stock_cost_report_screen.dart';
+import 'package:report_samples/screens/top_products_revenue/top_products_revenue_screen.dart';
 import 'package:report_samples/screens/week_on_week/week_on_week_screen.dart';
 import 'package:report_samples/screens/year_on_year/year_on_year_screen.dart';
 
@@ -127,6 +131,8 @@ class _MenuDrawerState extends State<MenuDrawer> {
           title: const Text('Promo products purchased'),
           onTap: () {
             Navigator.of(context).pop();
+            Navigator.of(context)
+                .pushReplacementNamed(PromotionReport.routeName);
           },
         ),
         ListTile(
@@ -134,6 +140,8 @@ class _MenuDrawerState extends State<MenuDrawer> {
           title: const Text('Sell through rate'),
           onTap: () {
             Navigator.of(context).pop();
+            Navigator.of(context)
+                .pushReplacementNamed(SellThroughReport.routeName);
           },
         ),
         ListTile(
@@ -141,6 +149,8 @@ class _MenuDrawerState extends State<MenuDrawer> {
           title: const Text('ABC Analysis'),
           onTap: () {
             Navigator.of(context).pop();
+            Navigator.of(context)
+                .pushReplacementNamed(ABCAnalysishReport.routeName);
           },
         ),
         ListTile(
@@ -148,6 +158,8 @@ class _MenuDrawerState extends State<MenuDrawer> {
           title: const Text('Top Products by Revenue'),
           onTap: () {
             Navigator.of(context).pop();
+            Navigator.of(context)
+                .pushReplacementNamed(TopProductsRevenue.routeName);
           },
         ),
         ListTile(

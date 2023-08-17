@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:report_samples/screens/home/components/cards/month_total_sold.dart';
 import 'package:report_samples/screens/home/components/cards/week_total_sold.dart';
 import 'package:report_samples/screens/home/components/cards/year_total_sold.dart';
-import 'package:report_samples/screens/year_on_year/year_on_year_screen.dart';
+import 'package:report_samples/screens/home/components/charts/week_chart_report.dart';
+
+import 'charts/month_chart.dart';
+import 'charts/year_chart.dart';
 
 class ReportsGrid extends StatefulWidget {
   const ReportsGrid({super.key});
@@ -23,17 +26,17 @@ class _ReportsGridState extends State<ReportsGrid> {
             children: <Widget>[
               Card(
                 child: Container(
-                  child: const Text("Hi"),
+                  child: const YearReport(),
                 ),
               ),
               Card(
                 child: Container(
-                  child: Text("Hi"),
+                  child: const MonthReport(),
                 ),
               ),
               Card(
                 child: Container(
-                  child: Text("Hi"),
+                  child: const WeekReport(),
                 ),
               ),
             ],
@@ -42,17 +45,17 @@ class _ReportsGridState extends State<ReportsGrid> {
             children: <Widget>[
               Card(
                 child: Container(
-                  child: YearlyTotalSold(),
+                  child: const YearlyTotalSold(),
                 ),
               ),
               Card(
                 child: Container(
-                  child: MonthlyTotalSold(),
+                  child: const MonthlyTotalSold(),
                 ),
               ),
               Card(
                 child: Container(
-                  child: WeeklyTotalSold(),
+                  child: const WeeklyTotalSold(),
                 ),
               ),
             ],

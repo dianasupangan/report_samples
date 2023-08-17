@@ -28,12 +28,12 @@ class _MonthlyTotalSoldState extends State<MonthlyTotalSold> {
             children: [
               Text(
                 getMonthlyTotal,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 21,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 " Total",
                 style: TextStyle(
                   fontSize: 17,
@@ -41,7 +41,7 @@ class _MonthlyTotalSoldState extends State<MonthlyTotalSold> {
               ),
             ],
           ),
-          Text(
+          const Text(
             "Monthly Sold",
             style: TextStyle(
               fontSize: 17,

@@ -25,7 +25,7 @@ class _CardsState extends State<Cards> {
       children: [
         //Total stock cost card
         Card(
-          child: Container(
+          child: SizedBox(
             height: 170,
             width: 160,
             child: Column(
