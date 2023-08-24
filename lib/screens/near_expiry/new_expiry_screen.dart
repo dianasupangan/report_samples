@@ -25,6 +25,10 @@ class NearExpiryScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
+              Text("- Show items near expiry"),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

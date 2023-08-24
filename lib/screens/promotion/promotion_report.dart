@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:report_samples/utils/drawer.dart';
 
 import 'components/table.dart';
-import 'components/cards.dart';
 import 'components/chart.dart';
 
 class PromotionReport extends StatelessWidget {
@@ -26,15 +25,13 @@ class PromotionReport extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ReportChart(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Cards(),
-                ],
+              Text("- Monitor sale of discounted items."),
+              SizedBox(
+                height: 20,
+              ),
+              ReportChart(),
+              SizedBox(
+                height: 20,
               ),
               SizedBox(
                 height: 20,

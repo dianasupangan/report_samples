@@ -23,6 +23,10 @@ class LowStockReportScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
+              Text("- Monitor item with low stock"),
+              SizedBox(
+                height: 20,
+              ),
               ListCard(),
               SizedBox(
                 height: 20,

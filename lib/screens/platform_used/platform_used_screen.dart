@@ -24,6 +24,11 @@ class PlatformUsedScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
+              Text(
+                  "- Monitor what platforms are used in order to access application"),
+              SizedBox(
+                height: 20,
+              ),
               ReportChart(),
               SizedBox(
                 height: 20,

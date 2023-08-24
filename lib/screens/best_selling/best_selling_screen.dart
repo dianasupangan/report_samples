@@ -25,6 +25,10 @@ class BestSelling extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
+              Text("- Monitor the best selling items"),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

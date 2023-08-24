@@ -26,10 +26,10 @@ class _ReportTableState extends State<ReportTable> {
             label: Text('Stock Delivered'),
           ),
           DataColumn(
-            label: Text('Percent of Stock Sold'),
+            label: Text('Sold Stock'),
           ),
           DataColumn(
-            label: Text('Sold Stock'),
+            label: Text('Percent of Stock Sold'),
           ),
         ],
         rows: _createRows());
@@ -43,11 +43,21 @@ class _ReportTableState extends State<ReportTable> {
         DataCell(Text(items["item"])),
         DataCell(Text(items["description"])),
         DataCell(Text(items["stock_delivered"])),
-        DataCell(Text(items["percent"])),
         DataCell(Text(items["sold_stock"])),
+        DataCell(Text("${getPercentage(
+          double.parse(items["stock_delivered"]),
+          double.parse(items["sold_stock"]),
+        )}%")),
       ]));
     }
 
     return row;
+  }
+
+  String getPercentage(double whole, double part) {
+    double num = part / whole;
+    double percent = num * 100;
+
+    return percent.toStringAsFixed(2).toString();
   }
 }

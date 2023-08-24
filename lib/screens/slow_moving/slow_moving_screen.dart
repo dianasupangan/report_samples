@@ -26,6 +26,10 @@ class SlowMovingScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
+              Text("- Monitor least sold items"),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

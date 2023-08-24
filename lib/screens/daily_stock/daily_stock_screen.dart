@@ -24,6 +24,10 @@ class DailyStockReportScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
+              Text("- Report of the stock sold per day"),
+              SizedBox(
+                height: 20,
+              ),
               ReportChart(),
               SizedBox(
                 height: 20,
